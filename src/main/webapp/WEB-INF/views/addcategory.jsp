@@ -159,7 +159,7 @@ span.input-group-addon i {
 							<div class="cols-sm-10">
 								<div class="input-group">
 			                        <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>					
-									<input type="text" class="form-control" name="id"  placeholder="Enter product id"/>
+									<input type="text" class="form-control" name="id"  placeholder="Enter Category id"/>
 								</div>
 							</div>
 						</div>
