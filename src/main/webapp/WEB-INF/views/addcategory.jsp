@@ -162,7 +162,7 @@ span.input-group-addon i {
 									<input type="text" class="form-control" name="id"  placeholder="Enter Category id"/>
 								</div>
 							</div>
-						</div>
+					</div>
 
 						<div class="form-group">
 							<label for="category name" class="cols-sm-2 control-label">CATEGORY NAME</label>
