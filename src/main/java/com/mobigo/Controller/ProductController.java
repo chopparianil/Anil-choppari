@@ -2,19 +2,24 @@ package com.mobigo.Controller;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mobigo.dao.ProductDao;
 import com.mobigo.model.Product;
-import com.mobigo.model.User;
+
 
 @Controller
 @RequestMapping(value="/addproduct")
 public class ProductController 
 {
+	@Autowired
+	ProductDao productdao;
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String viewproduct(Map<String,Object>model)
 	{
@@ -36,7 +41,7 @@ public class ProductController
 	    System.out.println("quantity" + product.getQuantity());
 
 
-	    
+	    productdao.storeProduct(product);
 	     
 	    return "addproductsuccess";
 	}

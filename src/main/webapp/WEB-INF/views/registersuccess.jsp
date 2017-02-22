@@ -20,6 +20,11 @@ pageEncoding="UTF-8"%>
                 </td>
 </tr>
 <tr>
+<td>USER ID:</td>
+<td>${userForm.uid}</td>
+</tr>
+
+<tr>
 <td>First Name:</td>
 <td>${userForm.firstname}</td>
 </tr>

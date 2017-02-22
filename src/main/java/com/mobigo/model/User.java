@@ -1,12 +1,34 @@
 package com.mobigo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User 
 {
+	@Id
+	@GeneratedValue
+	private int uid;
+	
+	@Column
 	private String firstname;
+	@Column
 	private String lastname;
+	@Column
 	private String username;
+	@Column
 	private String password;
+	@Column
 	private String email;
+	
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
 	public String getFirstname() {
 		return firstname;
 	}

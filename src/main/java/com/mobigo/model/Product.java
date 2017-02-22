@@ -2,13 +2,25 @@ package com.mobigo.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+@Entity
 public class Product 
 {
+	@Id
+	@GeneratedValue
 private int id;
+	@Column
 private String name;
+	@Column
 private String description;
+	@Column
 private double price;
+	@Column
 private int quantity;
+	@Column
 private Date mfg;
 public int getId() {
 	return id;

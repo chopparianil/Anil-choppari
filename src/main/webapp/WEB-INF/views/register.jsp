@@ -155,6 +155,16 @@ span.input-group-addon i {
 						<form:form action="register" method="post" commandName="userForm">
 						
 						<div class="form-group">
+							<label for="UserID" class="cols-sm-2 control-label">User ID</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+			                        <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>					
+									<input type="text" class="form-control" name="uid"  placeholder="User ID"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
 							<label for="Firstname" class="cols-sm-2 control-label">FirstName</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
