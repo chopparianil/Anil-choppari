@@ -1,5 +1,6 @@
 package com.mobigo.Controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,12 @@ public class CategoryController
 	{
 		Category categoryForm=new Category();
 		model.put("categoryForm",categoryForm);
+		
+		List l=catDAO.getcat();
+		model.put("cattt",l);
+
+		
+		
 		return"addcategory";
 	}
 	
@@ -36,10 +43,16 @@ public String processRegistration(@ModelAttribute("categoryForm") Category categ
     // implement your own registration logic here...
      
     // for testing purpose:
-    //System.out.println("username: " + user.getUsername());
+    //System.out.println("user name: " + user.getUsername());
     //System.out.println("password: " + user.getPassword());
    
      catDAO.storeCategory(category);
-    return "addcategorysuccess";
+     
+     List l=catDAO.getcat();
+		model.put("cattt",l);
+
+     
+     
+    return "addcategory";
 }
 }

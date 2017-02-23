@@ -1,5 +1,6 @@
 package com.mobigo.Controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,28 @@ public class ProductController
 	@Autowired
 	ProductDao productdao;
 	
+	
+	
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public String viewproduct(Map<String,Object>model)
 	{
 		Product productForm=new Product();
 		model.put("productForm",productForm);
+		
+		List l=productdao.getproduct();
+		model.put("prodd",l);
+
+		
+		
 	return "addproduct";
 	}
+	
+	
+	
+	
+	
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public String processRegistration(@ModelAttribute("productForm") Product product,
 	        Map<String, Object> model) {
@@ -42,8 +58,13 @@ public class ProductController
 
 
 	    productdao.storeProduct(product);
+	    
+	    List l=productdao.getproduct();
+		model.put("prodd",l);
+
+
 	     
-	    return "addproductsuccess";
+	    return "addproduct";
 	}
 	}
 	

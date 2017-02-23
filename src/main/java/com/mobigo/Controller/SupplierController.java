@@ -1,5 +1,6 @@
 package com.mobigo.Controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import com.mobigo.model.Supplier;
 public class SupplierController 
 {
 	
+	
 	@Autowired
 	SuppDao supDAO;
 	
@@ -28,8 +30,16 @@ public class SupplierController
 	{
 		Supplier supplierForm=new Supplier();
 		model.put("supplierForm",supplierForm);
-		return"addsupplier";
-	}
+		List l2=supDAO.getsup();
+		model.put("sup",l2);
+
+		return "addsupplier";
+		
+		
+		
+		
+	
+			}
 	
 
 
@@ -45,9 +55,13 @@ public String processRegistration(@ModelAttribute("supplierForm") Supplier suppl
    
      
     supDAO.storeSupplier(supplier);
+    
+    List l2=supDAO.getsup();
+	model.put("sup",l2);
+
 	
 	
-	return "addsuppliersuccess";
+	return "addsupplier";
 }
 
 }

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+       <%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+  
+        
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -191,6 +198,44 @@ span.input-group-addon i {
                 </div>
 						
 			</form:form>
+			
+			
+			
+
+
+
+
+<sql:setDataSource var="s" driver="org.h2.Driver" url="jdbc:h2:~/dt9"
+user="har" password="har"/>
+     
+    
+     
+   		 <table class="table table-bordered">
+
+  <thead>
+   <tr>
+    <th>Supplier Id</th>
+    <th>Supplier Name</th>
+    <th>Supplier Description</th>
+    </tr>
+  </thead>
+  <c:forEach items="${sup}" var="s">
+  <tr>
+    <td><c:out value="${s.id}"/></td>
+    <td><c:out value="${s.name}"/></td>
+    <td><c:out value="${s.description}"/></td>
+  </tr>
+  </c:forEach>
+</table>	
+			
+	
+			
+			
+			
+			
+			
+			
+			
 
 
 </body>

@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+         <%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+        
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -184,6 +189,23 @@ span.input-group-addon i {
 							</div>
 						</div>
 
+                            <div class="form-group">
+							<label for="product price" class="cols-sm-2 control-label">PRODUCT PRICE</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="price"   placeholder="Enter Product price"/>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
 						<div class="form-group">
 							<label for="product quantity" class="cols-sm-2 control-label">PRODUCT QUANTITY</label>
 							<div class="cols-sm-10">
@@ -209,7 +231,41 @@ span.input-group-addon i {
                 </div>
 						
 			</form:form>
+				
+				
 
+
+
+<sql:setDataSource var="p" driver="org.h2.Driver" url="jdbc:h2:~/dt9"
+user="har" password="har"/>
+     
+    
+     
+   		 <table class="table table-bordered" width="2200" border="5">
+
+  <thead>
+   <tr>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Product Description</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+    <th>Product mfg</th>
+    
+    </tr>
+  </thead>
+  <c:forEach items="${prodd}" var="p">
+  <tr>
+    <td><c:out value="${p.id}"/></td>
+    <td><c:out value="${p.name}"/></td>
+    <td><c:out value="${p.description}"/></td>
+        <td><c:out value="${p.price}"/></td>
+     <td><c:out value="${p.quantity}"/></td>
+            <td><c:out value="${p.mfg}"/></td>
+        </tr>
+  </c:forEach>
+</table>
+				
 
 </body>
 </html>
