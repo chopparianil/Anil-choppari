@@ -152,15 +152,17 @@ span.input-group-addon i {
 
 
 <body>
+
  	<jsp:include page="adminindex.jsp"></jsp:include>
  	 
             
-
+                                                   <!-- controller came here -->
+                                                    
 <div class="container">
 			<div class="row main">
 				<div class="main-login main-center">
 						<form:form action="addsupplier" method="post" commandName="supplierForm">
-						
+						<!-- method should be post --><!-- command name should match object created in controller using Supplier class(model class) -->
 						<div class="form-group">
 							<label for="supplier id" class="cols-sm-2 control-label">SUPPLIER ID</label>
 							<div class="cols-sm-10">
@@ -198,6 +200,8 @@ span.input-group-addon i {
                 </div>
 						
 			</form:form>
+			
+			<!-- from here controller will goes to post method in Supplier controller -->
 			
 			
 			

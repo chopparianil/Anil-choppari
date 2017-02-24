@@ -16,22 +16,26 @@ public class SuppDao {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public void storeSupplier(Supplier supp)
+	public void storeSupplier(Supplier supp)//STORING DATA IN DATABASE( flow is like JSP TO CONTRLEER TO DAO)
+	//supplier object came here.
+	// create supp object using Supplier class(model class) and save supplier object in supp object.
 	{
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.openSession(); //open session to do transaction with database.(as of now we are storing data)
 		System.out.println("insert called method");
-		session.beginTransaction();
+		session.beginTransaction();                   //begin transactions
 		session.save(supp);
 		session.getTransaction().commit();
-		session.close();
+		session.close();                              //close session
 	}
 	
-	public List getsup()
+	
+	
+	public List getsup()   //RETRIEVING DATA FROM DATABASE TO SHOW IN JSP PAGE FOR THIS WE USE JSTL ( flow is like DAO TO CONTROLLER TO JSP PAGE) 
 	{
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.openSession();//open session to do transactions with database(as of now we are retrieving data) 
 		System.out.println("insert called method");
-		session.beginTransaction();
-	List l2=session.createQuery("FROM Supplier").list();
+		session.beginTransaction();                   //begin transaction
+	List l2=session.createQuery("FROM Supplier").list();  //create object l2 using List class(List class available in util package)
 	session.getTransaction().commit();
 	session.close();
 
