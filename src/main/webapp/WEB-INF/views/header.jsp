@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,40 +23,46 @@
     <a class="navbar-brand" href="#">Mobigo</a>
     </div>
     <ul class="nav navbar-nav">
-     <li class="active"><a href="adminhome" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-home"></span> adminhome
-        </a></li>
-        
-      <li class="active"><a href="home" class="btn btn-info btn-lg">
+    <li>Welcome <c:out value="${UserName}"></c:out></li>
+     
+            <a href="home" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-home"></span> home
         </a>
       
-      </li>
       
-      <li class="active"><a href="products" class="btn btn-info btn-lg">
+      
+           <a href="ViewProd" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-search"></span> products
-        </a></li>
+        </a>
     
     
-       <li class="active"><a href="contactus" class="btn btn-info btn-lg">
+            <a href="contact" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-envelope"></span> contactus
-        </a></li>
+        </a>
         
      
-    <li class="active"><a href="aboutus"  class="btn btn-info btn-lg">
+          <a href="abtus"  class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-info-sign"></span> aboutus
         </a></li></ul>
         
+        
         <ul class="nav navbar-nav navbar-right">
         
-          <li class="active"><a href="login" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-log-in"></span> login 
-           </a></li>
-          <li class="active"> <a href="register" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-user"></span> register
-       
-       
-        </a></li></ul>
+          
+          <a href="Register" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-user"></span> register</a></li>
+          
+            
+        <c:choose>
+ <c:when test="${UserLoggedIn}">
+ <c:out value="${cnt}"></c:out><a href="showCart" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a>
+<a href="perform_logout" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Logout  </a></ul>
+</c:when>
+  <c:otherwise>
+     <a href="Login" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> login 
+           </a></ul>
+     </c:otherwise>
+</c:choose>
     
   </div>
 </nav>

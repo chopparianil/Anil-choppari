@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin</title>
+<title>Registration success</title>
 </head>
 <body>
-<jsp:include page="adheader.jsp"></jsp:include>
-Admin
+<h1> Registration success</h1>
+<a href="Login">Login</a>
 </body>
 </html>

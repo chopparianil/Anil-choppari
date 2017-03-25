@@ -29,15 +29,13 @@
   color:focus;
   }
   </style>
-  <style type="text/css">
-  body{background-image:url("resources/29.jpg");}
+  
+  <style>
   
   </style>
-  
- 
 <body>
 
-<jsp:include page="WEB-INF/views/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 
 <div class="container">
   <br>
@@ -85,7 +83,7 @@
     </a>
   </div>
 </div>
-<jsp:include page="WEB-INF/views/footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

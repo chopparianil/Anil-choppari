@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+
 </head>
 <style>
   .carousel-inner > .item > img,
@@ -16,6 +17,22 @@
       width: 70%;
       margin: auto;
   }
+  </style>
+  <style>
+  .navbar-default
+  {
+  background-color:7bdbc1;
+  border-color:#E7E7E7;
+  }
+  .navbar-brand
+  {
+  color:focus;
+  }
+  </style>
+  
+  <style type="text/css">
+  body{background-image:url("resources/29.jpg");}
+  
   </style>
 <body>
 
@@ -67,11 +84,7 @@
     </a>
   </div>
 </div>
-
 <jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>
-
-
-
-
